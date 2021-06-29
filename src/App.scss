@@ -4,25 +4,20 @@ h1,
 h2 {
   font-family: "Benne", serif;
 }
+
+$main-colors: (
+  "black": black,
+  "red": red,
+  "blue": blue,
+  "green": green,
+  "yellow": yellow,
+);
+
 .App-header {
-  &.black {
-    color: black;
-  }
-
-  &.red {
-    color: red;
-  }
-
-  &.blue {
-    color: blue;
-  }
-
-  &.green {
-    color: green;
-  }
-
-  &.yellow {
-    color: yellow;
+  @each $main-color, $color-value in $main-colors {
+    &.#{$main-color} {
+      color: $color-value;
+    }
   }
 }
 
@@ -34,24 +29,10 @@ h2 {
     border: none;
     margin-top: 10px;
 
-    &.black {
-      background-color: black;
-    }
-
-    &.red {
-      background-color: red;
-    }
-
-    &.blue {
-      background-color: blue;
-    }
-
-    &.green {
-      background-color: green;
-    }
-
-    &.yellow {
-      background-color: yellow;
+    @each $main-color, $color-value in $main-colors {
+      &.#{$main-color} {
+        background-color: $color-value;
+      }
     }
   }
 
@@ -63,24 +44,10 @@ h2 {
   }
 
   &.active {
-    &.black {
-      @include set-border(black);
-    }
-
-    &.red {
-      @include set-border(red);
-    }
-
-    &.blue {
-      @include set-border(blue);
-    }
-
-    &.green {
-      @include set-border(green);
-    }
-
-    &.yellow {
-      @include set-border(yellow);
+    @each $main-color, $color-value in $main-colors {
+      &.#{$main-color} {
+        @include set-border($color-value);
+      }
     }
   }
 }
