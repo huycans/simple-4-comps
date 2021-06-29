@@ -40,6 +40,7 @@ $main-colors: (
 
   @mixin set-border($color) {
     border: 5px solid $color;
+    border-radius: 20px;
     box-shadow: 10px 10px 5px $color;
   }
 
