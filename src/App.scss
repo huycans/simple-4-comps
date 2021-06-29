@@ -1,0 +1,86 @@
+@import "custom";
+
+h1,
+h2 {
+  font-family: "Benne", serif;
+}
+.App-header {
+  &.black {
+    color: black;
+  }
+
+  &.red {
+    color: red;
+  }
+
+  &.blue {
+    color: blue;
+  }
+
+  &.green {
+    color: green;
+  }
+
+  &.yellow {
+    color: yellow;
+  }
+}
+
+.article {
+  padding: 10px;
+  &-btn {
+    padding: 8px;
+    border-radius: 10%;
+    border: none;
+    margin-top: 10px;
+
+    &.black {
+      background-color: black;
+    }
+
+    &.red {
+      background-color: red;
+    }
+
+    &.blue {
+      background-color: blue;
+    }
+
+    &.green {
+      background-color: green;
+    }
+
+    &.yellow {
+      background-color: yellow;
+    }
+  }
+
+  border: 5px solid white;
+
+  @mixin set-border($color) {
+    border: 5px solid $color;
+    box-shadow: 10px 10px 5px $color;
+  }
+
+  &.active {
+    &.black {
+      @include set-border(black);
+    }
+
+    &.red {
+      @include set-border(red);
+    }
+
+    &.blue {
+      @include set-border(blue);
+    }
+
+    &.green {
+      @include set-border(green);
+    }
+
+    &.yellow {
+      @include set-border(yellow);
+    }
+  }
+}
